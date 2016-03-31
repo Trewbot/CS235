@@ -13,7 +13,7 @@ public class MovableCircle implements Movable {
 	   public MovableCircle(int x, int y, int xSpeed, int ySpeed, int radius) {
 	      // Call the MovablePoint's constructor to allocate the center instance.
 	      center = new MovablePoint(x, y, xSpeed, ySpeed);
-	      this.radius = radius;
+	      this.setRadius(radius);
 	   }
 	  
 	// Implement abstract methods declared in the interface Movable
@@ -45,7 +45,15 @@ public class MovableCircle implements Movable {
 	// Define other methods
 	public String toString()
 	{
-		return "The circle with radius " + radius + " is at ("
+		return "The circle with radius " + getRadius() + " is at ("
 				+ center.x + "," + center.y + ")";
+	}
+
+	public int getRadius() {
+		return radius;
+	}
+
+	public void setRadius(int radius) {
+		this.radius = radius;
 	}
 }

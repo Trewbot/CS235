@@ -15,5 +15,12 @@ public class Test {
 			System.out.println(i);
 			System.out.println();
 		}
+		
+		ResizableMovableCircle circa = new ResizableMovableCircle(56, 64, 7, 6, 36);
+		System.out.println(circa);
+		circa.moveDown();
+		circa.moveLeft();
+		circa.resize(50);
+		System.out.println(circa);
 	}
 }

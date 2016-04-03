@@ -5,7 +5,8 @@ public class ResizableMovableCircle extends MovableCircle implements Resizable,R
 		super(x, y, xSpeed, ySpeed, radius);
 	}
 	@Override public void resize(int percent){
-		super.setRadius(super.getRadius() * (percent / 100));
+		System.out.println("Resizing by " + percent + "%");
+		super.setRadius((int)(super.getRadius() * (percent / 100.0)));
 	}
 	@Override public double getPerimeter(){
 		return 2 * Math.PI * super.getRadius();

@@ -1,0 +1,11 @@
+daily#Dinner##home#6:30–7:30pm
+weekly#Clean#Clean house#Home#10:00am - 11:30am#0
+weekly#CS 235#lecture#SH 218#3:30 - 4:45pm#2
+weekly#CS 333#lecture#SH 218#11:00am - 12:15pm#2
+weekly#Office hours#for CS235#SH 212A#9:00-11:00am#2
+weekly#CS 235#lecture#SH 218#3:30 - 4:45pm#4
+weekly#CS 333#lecture#SH 218#11:00am - 12:15pm#4
+task#Study#for CS235 and other classes#5#180
+weekly#Reading##Library#8:00 - 10:00pm#5
+weekly#Shopping#Grocery#Sam's club#10:30-11:30am#6
+task#Watch Movie##5#150

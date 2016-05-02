@@ -1,0 +1,87 @@
+Course Project Design
+Trevor J Hoglund
+Apr 25, 2016
+
+Classes
+	Appointment
+		A basic appointment
+		Data members:
+			String label	appointment's label/name
+			String note		note about the appointment
+		Methods:
+			Appointment(String label, String note)
+				Creates an appointment with a specified label and note
+			String getLabel()
+				Returns the appointment's label
+			String getNote()
+				Returns the appointment's note
+	Task
+		A task appointment, extends appointment
+		Data members:
+			double duration	the approximate time to complete
+			int day			day of the week on which to complete the task
+		Methods:
+			Task(String label, String note, double duration, int day)
+				Creates a task appointment with specified fields
+			double getDuration()
+				returns the estimated time to complete the task
+			int getWeekDay()
+				returns the day of the week on which the task should be completed
+	ScheduledAppointment
+		A class for any appointments with locations and times
+		Data members:
+			String location	the place at which the appointment occurs
+			String time		the time at which the appointment occurs
+		Methods:
+			String getLocation()
+				returns the location of the appointment
+			String getTime()
+				returns the time of the appointment
+	DailyAppointment
+		An appointment that occurs every day, extends ScheduledAppointment
+		Data members:
+			--
+		Methods:
+			DailyAppointment(String label, String note, String location, String time)
+				Creates a DailyAppointment with the specified fields
+	WeeklyAppointment
+		An appointment that only occurs one a week, extends ScheduledAppointment
+		Data members:
+			int day			day of the week on which the appointment occurs
+		Methods:
+			WeeklyAppointment(String label, String note, String location, String time, int day)
+				creates a WeeklyAppointment with the specified fields
+			int getWeekDay()
+				returns the day of the week on which the appointment occurs
+	Schedule
+		An object that contains and parses a list of appointments
+		Data members:
+			Map<int,Appointment>	a map of each appointment to the integer value of its week day
+		Methods:
+			void loadFile(String filename)
+				loads in a schedule file with the specified filename
+			void addAppointment(Appointment appointment)
+				adds a new appointment to the schedule
+			void removeAppointment(String label)
+				removes an appointment from the schedule with the specified label
+			void printDailySchedule(int day)
+				prints out all appointments for the specified week day
+			void printWeeklySchedule()
+				prints out the schedule for the entire week
+Nonmember Functions
+	void main()
+		The primary driving program
+		No parameters
+Main Class Pseudocode
+	1.	create Schedule object
+	2.	ask user for schedule filename
+	3.	run Schedule.loadFile(filename)
+		a.	if FileError is thrown go back to 2.
+	4.	prompt user for input
+		a.	if input is d
+			i.	prompt user for day of week => Schedule.printDailySchedule()
+		b.	if input is w, Schedule.printWeeklySchedule()
+		c.	if input is r
+			i. prompt user for appointment label => Schedule.removeAppointment()
+		d.	if input is q, break loop (exit program)
+	5.	return to 4
